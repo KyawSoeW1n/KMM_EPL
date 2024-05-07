@@ -39,10 +39,22 @@ android {
 }
 
 dependencies {
+
+    val accompanistVersion = "0.28.0"
+
     implementation(projects.shared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+    implementation(platform(libs.compose.bom))
+    implementation(libs.coil.compose)
+    implementation(libs.koin.android.compose)
+    implementation(libs.navigation.compose)
+
+//    implementation("io.insert-koin:koin-androidx-compose:$koinComposeVersion")
+//    implementation("io.coil-kt:coil-compose:$coilVersion")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
 }

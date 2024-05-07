@@ -6,7 +6,7 @@ import io.ktor.client.request.parameter
 
 internal class FootballService : KtorApi() {
     suspend fun getTeamList(name: String): TeamListResponse = client.get {
-        pathUrl("search_all_teams.php")
-        parameter("i", name)
+        pathUrl(path = "search_all_teams.php")
+        parameter("l", name)
     }.body()
 }

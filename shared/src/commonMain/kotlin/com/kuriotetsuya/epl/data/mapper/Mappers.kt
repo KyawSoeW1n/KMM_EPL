@@ -6,6 +6,7 @@ import com.kuriotetsuya.epl.domain.model.TeamData
 internal fun TeamItemData.toTeamData(): TeamData {
     return TeamData(
         idTeam = idTeam,
+        url = strTeamBadge,
         name = strTeam
     )
 }

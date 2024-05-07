@@ -31,9 +31,9 @@ kotlin {
             implementation(libs.ktoreClientCore)
             implementation(libs.ktorClientContent)
             implementation(libs.ktorSerializationKotlinxJson)
-//            implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-//
-//            //Use api so that the android app can use it as well
+            implementation("io.ktor:ktor-client-logging:2.3.10")
+
+            //Use api so that the android app can use it as well
             api(libs.koinCore)
         }
         commonTest.dependencies {
