@@ -12,7 +12,6 @@ import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-//private const val BASE_URL = "https://www.thesportsdb.com/api/v1/json/3/"
 private const val BASE_URL = "https://www.thesportsdb.com"
 
 internal abstract class KtorApi {
