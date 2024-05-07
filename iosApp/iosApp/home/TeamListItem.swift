@@ -13,7 +13,7 @@ struct TeamGridItem: View {
     let teamData: TeamData
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8){
+        VStack(alignment: .center, spacing: 8){
             ZStack{
                 
                 AsyncImage(url: URL(string: teamData.url)){image in
@@ -32,7 +32,7 @@ struct TeamGridItem: View {
                 .lineLimit(2)
             
         }
-        .frame(maxWidth: .infinity, maxHeight: 260)
+        .frame(maxWidth: .infinity, maxHeight: 200)
     }
 }
 

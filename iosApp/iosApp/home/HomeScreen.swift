@@ -3,7 +3,7 @@ import shared
 
 struct HomeScreen: View {
     @StateObject var viewModel = HomeViewModel()
-    
+
     let gridColumns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing: 16), count: 2)
     
     var body: some View {
