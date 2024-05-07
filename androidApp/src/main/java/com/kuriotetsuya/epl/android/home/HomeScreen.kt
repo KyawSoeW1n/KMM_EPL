@@ -18,6 +18,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,6 +31,7 @@ import com.kuriotetsuya.epl.domain.model.TeamData
 fun HomeScreen(
     modifier: Modifier = Modifier,
     uiState: HomeScreenState,
+    onRefresh: () -> Unit,
     navigateToDetail: (TeamData) -> Unit
 ) {
 
@@ -69,6 +71,20 @@ fun HomeScreen(
                         )
                     }
                 }
+            }
+        }
+
+        if (pullToRefreshState.isRefreshing) {
+            LaunchedEffect(true) {
+                onRefresh()
+            }
+        }
+
+        LaunchedEffect(uiState.refresh) {
+            if (uiState.refresh) {
+                pullToRefreshState.startRefresh()
+            } else {
+                pullToRefreshState.endRefresh()
             }
         }
 

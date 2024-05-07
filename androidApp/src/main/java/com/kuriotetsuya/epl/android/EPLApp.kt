@@ -69,6 +69,9 @@ fun EPLApp() {
                 val homeViewModel: HomeViewModel = koinViewModel()
                 HomeScreen(
                     uiState = homeViewModel.uiState,
+                    onRefresh = {
+                        homeViewModel.loadTeamList()
+                    },
                     navigateToDetail = {
                         navController.navigate(
                             "${Detail.route}/${it.idTeam}"

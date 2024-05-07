@@ -16,15 +16,17 @@ class HomeViewModel(
     var uiState by mutableStateOf(HomeScreenState())
 
 
-    init{
+    init {
         loadTeamList()
     }
+
     fun loadTeamList() {
         if (uiState.loading) return
 
         viewModelScope.launch {
             uiState = uiState.copy(
-                loading = true
+                loading = true,
+                refresh = true,
             )
 
             try {
